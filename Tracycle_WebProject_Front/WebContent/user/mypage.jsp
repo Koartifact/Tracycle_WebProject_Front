@@ -91,7 +91,7 @@
   		},
   		mounted(userId){
             axios
-            .get('http://127.0.0.1:7788/board/findById/'+this.userId,
+            .get('http://jckim8969.iptime.org:7788/board/findById/'+this.userId,
                     {
               	   headers : {
               	  		"jwt-auth-token":storage.getItem("jwt-auth-token")
@@ -106,7 +106,7 @@
             
             
             axios
-            .get('http://127.0.0.1:7788/comment/findCommentById/'+this.userId,
+            .get('http://jckim8969.iptime.org:7788/comment/findCommentById/'+this.userId,
                     {
               	   headers : {
               	  		"jwt-auth-token":storage.getItem("jwt-auth-token")

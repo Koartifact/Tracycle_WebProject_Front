@@ -85,7 +85,7 @@
   		
   		mounted(){
             axios          
-	            .get('http://127.0.0.1:7788/user/findByUserId/'+this.userId,
+	            .get('http://jckim8969.iptime.org:7788/user/findByUserId/'+this.userId,
 	            		{
 	              	   headers : {
 	              	  		"jwt-auth-token":storage.getItem("jwt-auth-token")
@@ -112,7 +112,7 @@
          	
          	updateUser(){
          		axios
-    					   .put('http://127.0.0.1:7788/user/updateUser',
+    					   .put('http://jckim8969.iptime.org:7788/user/updateUser',
     					  {			
     			
     						userId: this.userId,
