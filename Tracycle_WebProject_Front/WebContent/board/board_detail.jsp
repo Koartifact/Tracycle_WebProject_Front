@@ -56,7 +56,7 @@
 				    <div class="container">
 				      <div class="block-31 mb-5" style="position: relative;">
 				       	  <div v-for="image in images">
-				       	  <img class="detail_image" alt="" :src=("http://jckim8969.iptime.org:7788/board/getFile/"+image) width="600" height="400">
+				       	  <img class="detail_image" alt="" :src=("http://127.0.0.1:7788/board/getFile/"+image) width="600" height="400">
 				       	  </div>
 				       	  <!--
 				          <div v-for="image in images" class="owl-carousel loop-block-31">
@@ -276,7 +276,7 @@
                 
                 offset=(this.page.currentPageIndex-1)*this.page.listRowCount;
         		axios
-            	.get('http://jckim8969.iptime.org:7788/comment/getCommentLimitOffset/'+${param.boardId}+'/'+offset)
+            	.get('http://127.0.0.1:7788/comment/getCommentLimitOffset/'+${param.boardId}+'/'+offset)
                .then(response=>{this.comments = response.data;})
                .catch(error=>{
                    console.log(error);
@@ -285,7 +285,7 @@
                .finally(()=>this.loading = false),
                 
                 axios
-            	 .get('http://jckim8969.iptime.org:7788/board/getBoard/'+${param.boardId} +'/add', 
+            	 .get('http://127.0.0.1:7788/board/getBoard/'+${param.boardId} +'/add', 
                  		{
      	  			headers : {
      	  				"jwt-auth-token":storage.getItem("jwt-auth-token")
@@ -301,7 +301,7 @@
                .finally(()=>this.loading = false),
                 
                 axios
-                .get('http://jckim8969.iptime.org:7788/board/getFiles/'+${param.boardId},
+                .get('http://127.0.0.1:7788/board/getFiles/'+${param.boardId},
                 	
                 	{
       	  			headers : {
@@ -356,7 +356,7 @@
         				var seconds = today.getSeconds();
         				var dateString = year + '-' + month  + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
     	           		axios
-    	             	 .post('http://jckim8969.iptime.org:7788/comment/writeComment',
+    	             	 .post('http://127.0.0.1:7788/comment/writeComment',
     	             	 {date:dateString,
     	             	  content:this.info.content,
     	             	  secret:this.info.secret,
@@ -380,7 +380,7 @@
            		deleteComment(commentId){
           	 		if(confirm("댓글을 삭제 하시겠습니까?")){
 	           		axios
-	             	 .delete('http://jckim8969.iptime.org:7788/comment/deleteComment/'+commentId,
+	             	 .delete('http://127.0.0.1:7788/comment/deleteComment/'+commentId,
 	                  		{
 	      	  			headers : {
 	      	  				"jwt-auth-token":storage.getItem("jwt-auth-token")
@@ -396,7 +396,7 @@
            		deleteBoard(boardId){
           	 		if(confirm("게시글을 삭제 하시겠습니까?")){
 	           		axios
-	             	 .delete('http://jckim8969.iptime.org:7788/board/deleteBoard/'+boardId,
+	             	 .delete('http://127.0.0.1:7788/board/deleteBoard/'+boardId,
 	                  		{
 	      	  			headers : {
 	      	  				"jwt-auth-token":storage.getItem("jwt-auth-token")
@@ -431,7 +431,7 @@
             				var seconds = today.getSeconds();
             				var dateString = year + '-' + month  + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
         	           		axios
-        	             	 .put('http://jckim8969.iptime.org:7788/comment/updateComment',
+        	             	 .put('http://127.0.0.1:7788/comment/updateComment',
         	             	 {date:dateString,
         	             	  commentId:this.editId,
         	             	  content:this.editInfo.content,
@@ -459,7 +459,7 @@
             getComment(){
             	offset=(this.page.currentPageIndex-1)*this.page.listRowCount;
         		axios
-            	.get('http://jckim8969.iptime.org:7788/comment/getCommentLimitOffset/'+${param.boardId}+'/'+offset)
+            	.get('http://127.0.0.1:7788/comment/getCommentLimitOffset/'+${param.boardId}+'/'+offset)
                .then(response=>{this.comments = response.data;})
                .catch(error=>{
                    console.log(error);
@@ -469,7 +469,7 @@
         	},
             initPagination(){
         		axios
-        		.get('http://jckim8969.iptime.org:7788/comment/getCommentTotalCount/'+${param.boardId})
+        		.get('http://127.0.0.1:7788/comment/getCommentTotalCount/'+${param.boardId})
         			.then(response=>{this.page.totalListItemCount= response.data;
         			 this.initUI();
         			 })

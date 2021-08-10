@@ -1,4 +1,4 @@
-c<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -101,7 +101,7 @@ c<%@ page language="java" contentType="text/html; charset=UTF-8"
     	  		this.setInfo("로그아웃 성공", "", "");
     	  	},
     	  	getInfo() {
-    	  		axios.post("http://jckim8969.iptime.org:7788/user/info", {
+    	  		axios.post("http://127.0.0.1:7788/user/info", {
     	  			userId:this.userId,
     	  			password:this.password
     	  		},
@@ -126,7 +126,7 @@ c<%@ page language="java" contentType="text/html; charset=UTF-8"
           	login(){
           		storage.setItem("jwt-auth-token", "");
           		storage.setItem("login_user", "");
-          		axios.post("http://jckim8969.iptime.org:7788/user/login", {
+          		axios.post("http://127.0.0.1:7788/user/login", {
           			userId:this.userId,
           			password:this.password
           		})

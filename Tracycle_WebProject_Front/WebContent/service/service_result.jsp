@@ -60,7 +60,7 @@
 	      <div class="row">
 	        <div class="col-md-12 text-center pt-5 pb-5 mt-5 mb-5">
 	          <h1 class="pt-5 pb-5 text-center"> 이미지 들어갈 곳</h1>
-	          <img alt="" src="http://jckim8969.iptime.org:8085/static/result0.jpg">
+	          <img alt="" src="http://127.0.0.1:8085/static/result0.jpg">
       		 </div>
       	  </div>
       </div>
@@ -181,7 +181,7 @@
             },
             mounted(){
                 axios
-             	.get('http://jckim8969.iptime.org:7788/result/getResult')
+             	.get('http://127.0.0.1:7788/result/getResult')
                 .then(response=>(this.info = response.data))
                 .catch(error=>{
                     console.log(error);

@@ -78,7 +78,7 @@
   		
   		mounted(){
             axios          
-	            .get('http://jckim8969.iptime.org:7788/user/findByUserId/'+this.userId,
+	            .get('http://127.0.0.1:7788/user/findByUserId/'+this.userId,
 	            		{
 	              	   headers : {
 	              	  		"jwt-auth-token":storage.getItem("jwt-auth-token")
@@ -108,7 +108,7 @@
          	deleteUser(userId){
         		if(confirm("계정을 삭제 하시겠습니까?")){
         			axios
-        			.delete('http://jckim8969.iptime.org:7788/user/deleteUser/'+this.userId,
+        			.delete('http://127.0.0.1:7788/user/deleteUser/'+this.userId,
         			{
         				headers : {
           	  				"jwt-auth-token":storage.getItem("jwt-auth-token")
