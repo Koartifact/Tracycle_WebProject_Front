@@ -13,9 +13,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=Song+Myung&display=swap" rel="stylesheet">
-	
-	
-  
    <script src="../js/jquery.min.js"></script>
     <script type="text/javascript">
     var url = window.location.pathname;
@@ -63,7 +60,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
-       <a href="../main/index.jsp" class="pc-show"><h1 style="color: white;" class="pc-show"><img src="../images/tracycle-logo2.png" width="50%"></h1></a>
+       <a href="../main/index.jsp" class="pc-show"><h1 style="color: white;" class="pc-show"><img src="../images/tracycle-logo2.png" width="40%"></h1></a>
         <ul class="navbar-nav ml-auto">
 
           <li class="nav-item"><a href="../main/index.jsp"  class="nav-link">Home</a></li>

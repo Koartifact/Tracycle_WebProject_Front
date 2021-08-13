@@ -3,6 +3,9 @@
 <!DOCTYPE html>
   <head>
   <meta charset="UTF-8">
+      <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+ 
      <title>지구를 위한 Tracycle</title>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
   	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -26,6 +29,7 @@
     <link rel="stylesheet" href="../css/fancybox.min.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/style.css">
+
   </head>
   <body>
   <jsp:include page="../header.jsp"></jsp:include>
@@ -41,16 +45,20 @@
           <div class="post" >
           	<h2 class="display-4 mb-3">My Posting</h2>
           	<div class="mycontent"  v-for="board in info">
+          		<a :href=("../board/board_detail.jsp?boardId="+board.boardId) class="">
           		<h4>{{board.title}}</h4>
           		<p>{{board.content}}</p>
+          		</a>
           	</div>
           </div>
           <div class="comment">
           	<h2 class="display-4 mb-3">My Comment</h2>
           	<div class="mycontent" v-for="comment in commentinfo">
-          		<h6>글 번호 : {{comment.board.boardId}}</h6>
+          		<a :href=("../board/board_detail.jsp?boardId="+comment.board.boardId) class="">
+          		
 				<h4>{{comment.board.title}}</h4>
 				<p>{{comment.content}}</p>
+          		</a>
           	</div>
           </div>
         </div>
@@ -72,9 +80,6 @@
   <script src="../js/bootstrap-datepicker.js"></script>
   <script src="../js/jquery.fancybox.min.js"></script>
   <script src="../js/aos.js"></script>
-  <script src="../js/jquery.animateNumber.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="../js/google-map.js"></script>
   <script src="../js/main.js"></script>
   <script>
  //const storage = window.sessionStorage;

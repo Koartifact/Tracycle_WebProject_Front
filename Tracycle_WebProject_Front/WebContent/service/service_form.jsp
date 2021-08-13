@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
-
+<!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 <title>지구를 위한 Tracycle</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -101,6 +101,7 @@
 
 
 		<div v-if="isLoaded" class="bannerContainer">
+		<div class="table-responsive">
 			<table class="table text-center pt-5 pb-5 mt-5 mb-5">
 					<thead>
 						<tr>
@@ -120,25 +121,24 @@
 						</tr>
 					</tbody>
 				</table>
+		</div>
 			<div class="row d-flex">
 				
 
 				<div class="col-md-4  align-self-stretch">
 					<div class="media block-71" v-on:click="goURL">
-						<div class="media-body p-3 mt-3">
+						<div class="media-body p-3 mt-3 mobile-pm-0">
 							<span style="color: rgba(128, 156, 168, 1)"><i
-								class="fa fa-globe fa-5x" aria-hidden="true"
-								style="width: 100px;"></i></span>
+								class="fa fa-globe fa-5x" aria-hidden="true"></i></span>
 							<h6 class="heading mt-2 mb-4">
 								폐기물 인터넷 <br class="mobile-br">접수 바로가기
 							</h6>
 						</div>
 					</div>
 					<div class="media block-71" v-on:click="go15990903">
-						<div class="media-body p-3 mt-3">
+						<div class="media-body p-3 mt-3 mobile-pm-0">
 							<span style="color: rgba(128, 156, 168, 1)"><i
-								class="fa fa-truck fa-5x" aria-hidden="true"
-								style="width: 100px;"></i></span>
+								class="fa fa-truck fa-5x" aria-hidden="true"></i></span>
 							<h6 class="heading mt-2 mb-4">
 								폐가전 무상방문수거 <br class="mobile-br">접수 바로가기
 							</h6>
@@ -147,13 +147,12 @@
 				</div>
 				<div class="col-md-4 d-flex align-self-stretch">
 					<div class="media block-7">
-						<div class="media-body p-3 mt-3">
+						<div class="media-body p-3 mt-3 mobile-pm-0">
 							<a href="../board/board_form.jsp" target="_blank"> <span
 								style="color: rgba(128, 156, 168, 1)"><i
-									class="fa fa-heart-o fa-5x" aria-hidden="true"
-									style="width: 100px; height: 150px;"></i></span>
-								<h6 class="heading mb-4" style="color: black">
-									작은 실천이 <br class="mobile-br">큰 힘이 됩니다
+									class="fa fa-heart-o fa-5x" aria-hidden="true"></i></span>
+								<h6 class="heading mb-4 mobile-pm-0 mobile-mt-2" style="color: black">
+									작은 실천이 큰 힘이 됩니다
 								</h6>
 								<p class="heading-2" style="color: black">무료 나눔 하기</p></a>
 						</div>
@@ -161,12 +160,11 @@
 				</div>
 				<div class="col-md-4 d-flex align-self-stretch">
 					<div class="media block-7 ">
-						<div class="media-body p-3 mt-3">
+						<div class="media-body p-3 mt-3 mobile-pm-0">
 						<a :href=("tel:"+telephone) target="_blank">
 							<span style="color: rgba(128, 156, 168, 1)"><i
-								class="fa fa-volume-control-phone fa-5x" aria-hidden="true"
-								style="width: 100px; height: 150px;"></i></span>
-							<h6 class="heading mb-4" style="color: black">폐기물 전화 접수하기</h6>
+								class="fa fa-volume-control-phone fa-5x" aria-hidden="true"></i></span>
+							<h6 class="heading mb-4 mobile-pm-0 mobile-mt-2" style="color: black">폐기물 전화 접수하기</h6>
 							<p class="heading-2" style="color: black">{{telephone}}</p>
 						</div>
 					</div>
@@ -209,9 +207,6 @@
 	<script src="../js/bootstrap-datepicker.js"></script>
 	<script src="../js/jquery.fancybox.min.js"></script>
 	<script src="../js/aos.js"></script>
-	<script src="../js/jquery.animateNumber.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-	<script src="../js/google-map.js"></script>
 	<script src="../js/main.js"></script>
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.js" integrity="sha512-t2sE4D8vBHZoytr423dbCPmX8MUKM9bNiVKGOMpqFYEsV8/GilxvresTtCsv9RDzqGMcizOd7EuXssJUtaGZLg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -285,7 +280,6 @@
 					for(var key of formData.entries()) {
 						console.log(key[0]+', '+key[1]);
 					}
-
 					axios.post('http://127.0.0.1:8085/service', formData)
 					.then(response=>{
 						this.result= response.data;
